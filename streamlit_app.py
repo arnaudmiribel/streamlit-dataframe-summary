@@ -31,7 +31,7 @@ with st.sidebar:
     display_type: str = st.radio(
         "Show summary stats in",
         ["dialog", "main", "side-by-side"],
-        index=1,
+        index=2,
         horizontal=True,
     )
 
