@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-
+@st.fragment
 def show_summary_stats(
     data: pd.DataFrame,
     column: str,
