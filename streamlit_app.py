@@ -8,6 +8,8 @@ from df_summary_stats import dataframe_with_summary_stats
 
 st.set_page_config(
     layout="wide",
+    page_title="Dataframe Summary",
+    page_icon=":material/troubleshoot:",
 )
 
 
