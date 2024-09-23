@@ -19,7 +19,6 @@ def get_data(data_name: str) -> pd.DataFrame:
 
 
 dataset_names = sns.get_dataset_names()
-dataset_names += ["Time-series"]
 
 st.title(":material/troubleshoot: Summary stats")
 
