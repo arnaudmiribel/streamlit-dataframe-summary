@@ -7,8 +7,8 @@ import streamlit as st
 @st.fragment
 def show_summary_stats(
     data: pd.DataFrame,
-    height: int,
     column: str,
+    height: int,
     column_label: str | None = None,
     display_type: Literal["dialog", "main", "side-by-side"] = "dialog",
 ) -> None:
