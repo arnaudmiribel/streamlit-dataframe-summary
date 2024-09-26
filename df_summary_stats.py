@@ -7,10 +7,10 @@ import streamlit as st
 @st.fragment
 def show_summary_stats(
     data: pd.DataFrame,
+    height: int,
     column: str,
     column_label: str | None = None,
     display_type: Literal["dialog", "main", "side-by-side"] = "dialog",
-    height: str | None = None,
 ) -> None:
     def _title(
         type_icon: str,
