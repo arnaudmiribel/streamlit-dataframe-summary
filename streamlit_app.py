@@ -55,5 +55,4 @@ dataframe_with_summary_stats(
     data,
     display_type=display_type.lower(),
     use_container_width=True,
-    height=400,
 )

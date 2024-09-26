@@ -268,6 +268,7 @@ def show_summary_stats(
 def dataframe_with_summary_stats(
     data: pd.DataFrame,
     display_type: Literal["dialog", "main", "side-by-side"] = "dialog",
+    height: int = 400,  # Useful for "main" and "side-by-side"
     **kwargs,
 ) -> None:
     assert (
@@ -293,9 +294,6 @@ def dataframe_with_summary_stats(
 
     if selected_columns := selection["selection"].get("columns"):
         selected_column = selected_columns[0]
-
-        if "height" in kwargs:
-            height = kwargs["height"]
 
         if display_type == "side-by-side":
             with right:
