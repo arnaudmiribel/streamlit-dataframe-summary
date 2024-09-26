@@ -298,15 +298,15 @@ def dataframe_with_summary_stats(
         if display_type == "side-by-side":
             with right:
                 show_summary_stats(
-                    data,
-                    selected_column,
-                    display_type="main",
+                    data=data,
+                    column=selected_column,
                     height=height,
+                    display_type="main",
                 )
         else:
             show_summary_stats(
-                data,
-                selected_column,
-                display_type=display_type,
+                data=data,
+                column=selected_column,
                 height=height,
+                display_type=display_type,
             )
