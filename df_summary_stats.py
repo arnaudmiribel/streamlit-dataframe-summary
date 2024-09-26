@@ -8,9 +8,9 @@ import streamlit as st
 def show_summary_stats(
     data: pd.DataFrame,
     column: str,
+    height: int,
     column_label: str | None = None,
     display_type: Literal["dialog", "main", "side-by-side"] = "dialog",
-    height: str | None = None,
 ) -> None:
     def _title(
         type_icon: str,
@@ -268,6 +268,7 @@ def show_summary_stats(
 def dataframe_with_summary_stats(
     data: pd.DataFrame,
     display_type: Literal["dialog", "main", "side-by-side"] = "dialog",
+    height: int = 400,  # Useful for "main" and "side-by-side"
     **kwargs,
 ) -> None:
     assert (
@@ -294,21 +295,18 @@ def dataframe_with_summary_stats(
     if selected_columns := selection["selection"].get("columns"):
         selected_column = selected_columns[0]
 
-        if "height" in kwargs:
-            height = kwargs["height"]
-
         if display_type == "side-by-side":
             with right:
                 show_summary_stats(
-                    data,
-                    selected_column,
-                    display_type="main",
+                    data=data,
+                    column=selected_column,
                     height=height,
+                    display_type="main",
                 )
         else:
             show_summary_stats(
-                data,
-                selected_column,
-                display_type=display_type,
+                data=data,
+                column=selected_column,
                 height=height,
+                display_type=display_type,
             )
